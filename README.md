@@ -177,12 +177,9 @@ open target/site/jacoco/index.html
 
 | Integrante | Código | Rol |
 |------------|--------|-----|
-| **Estudiante 1** | U20102540 | Desarrollador Full-Stack |
-| **Estudiante 2** | U20227836 | Arquitecto de Software |
-| **Estudiante 3** | U18304473 | Analista de Sistemas |
+| **Santiago Mansilla Nunura** | U22325995 | Desarrollador Full-Stack |
 
 **Docente**: Rubén Seclén Serrepe  
-**Estudiante**: Santiago Mansilla Nunura  
 **Curso**: Programación Orientada a Objetos (100000SI34)  
 **Universidad**: Universidad Tecnológica del Perú  
 
