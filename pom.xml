@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ================================================================ -->
+    <!-- INFORMACIÓN DEL PROYECTO                                         -->
+    <!-- ================================================================ -->
+    <groupId>com.utp.biblioteca</groupId>
+    <artifactId>biblioteca-digital</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Sistema de Gestión de Biblioteca Digital</name>
+    <description>Sistema POO para gestión bibliotecaria - UTP</description>
+    <url>https://github.com/tu-usuario/biblioteca-digital-poo</url>
+
+    <!-- ================================================================ -->
+    <!-- INFORMACIÓN DE DESARROLLADORES                                   -->
+    <!-- ================================================================ -->
+    <developers>
+        <developer>
+            <id>estudiante1</id>
+            <name>Estudiante 1</name>
+            <email>U20102540@utp.edu.pe</email>
+            <organization>Universidad Tecnológica del Perú</organization>
+            <roles>
+                <role>Desarrollador</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>estudiante2</id>
+            <name>Estudiante 2</name>
+            <email>U20227836@utp.edu.pe</email>
+            <organization>Universidad Tecnológica del Perú</organization>
+            <roles>
+                <role>Desarrollador</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>estudiante3</id>
+            <name>Estudiante 3</name>
+            <email>U18304473@utp.edu.pe</email>
+            <organization>Universidad Tecnológica del Perú</organization>
+            <roles>
+                <role>Desarrollador</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <!-- ================================================================ -->
+    <!-- PROPIEDADES DEL PROYECTO                                         -->
+    <!-- ================================================================ -->
+    <properties>
+        <!-- Configuración de Java -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
+        <!-- Versiones de dependencias -->
+        <javafx.version>19</javafx.version>
+        <mysql.version>8.0.33</mysql.version>
+        <hibernate.version>6.4.1.Final</hibernate.version>
+        <junit.version>5.9.2</junit.version>
+        <mockito.version>5.1.1</mockito.version>
+        <slf4j.version>2.0.6</slf4j.version>
+        <logback.version>1.4.5</logback.version>
+        
+        <!-- Configuración de plugins -->
+        <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>3.0.0-M9</maven.surefire.plugin.version>
+        <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+        <jacoco.maven.plugin.version>0.8.8</jacoco.maven.plugin.version>
+    </properties>
+
+    <!-- ================================================================ -->
+    <!-- DEPENDENCIAS DEL PROYECTO                                        -->
+    <!-- ================================================================ -->
+    <dependencies>
+        
+        <!-- ============================================================ -->
+        <!-- INTERFAZ GRÁFICA - JAVAFX                                   -->
+        <!-- ============================================================ -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <!-- ============================================================ -->
+        <!-- BASE DE DATOS - MySQL                                       -->
+        <!-- ============================================================ -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <!-- ============================================================ -->
+        <!-- ORM - HIBERNATE                                             -->
+        <!-- ============================================================ -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.6.15.Final</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.0.Final</version>
+        </dependency>
+
+        <!-- ============================================================ -->
+        <!-- LOGGING - SLF4J + Logback                                   -->
+        <!-- ============================================================ -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <!-- ============================================================ -->
+        <!-- UTILIDADES                                                   -->
+        <!-- ============================================================ -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.14.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.14.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+        <!-- ============================================================ -->
+        <!-- TESTING - JUnit 5                                           -->
+        <!-- ============================================================ -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ============================================================ -->
+        <!-- MOCKING - Mockito                                            -->
+        <!-- ============================================================ -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ============================================================ -->
+        <!-- TESTING DE BASE DE DATOS                                    -->
+        <!-- ============================================================ -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.1.214</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>1.17.6</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>mysql</artifactId>
+            <version>1.17.6</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- ================================================================ -->
+    <!-- CONFIGURACIÓN DE BUILD                                           -->
+    <!-- ================================================================ -->
+    <build>
+        <finalName>biblioteca-digital-${version}</finalName>
+        
+        <plugins>
+            <!-- ======================================================== -->
+            <!-- COMPILADOR JAVA                                         -->
+            <!-- ======================================================== -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                    <encoding>UTF-8</encoding>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+
+            <!-- ======================================================== -->
+            <!-- TESTING - SUREFIRE                                      -->
+            <!-- ======================================================== -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/*IntegrationTest.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- ======================================================== -->
+            <!-- COBERTURA DE CÓDIGO - JACOCO                            -->
+            <!-- ======================================================== -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- ======================================================== -->
+            <!-- JAVAFX - EJECUCIÓN                                      -->
+            <!-- ======================================================== -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.maven.plugin.version}</version>
+                <configuration>
+                    <mainClass>com.utp.biblioteca.BibliotecaApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <!-- Default configuration for running -->
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>com.utp.biblioteca.BibliotecaApplication</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- ======================================================== -->
+            <!-- RECURSOS                                                -->
+            <!-- ======================================================== -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- ======================================================== -->
+            <!-- DOCUMENTACIÓN JAVADOC                                   -->
+            <!-- ======================================================== -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <source>17</source>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <charset>UTF-8</charset>
+                    <show>protected</show>
+                    <nohelp>true</nohelp>
+                    <failOnError>false</failOnError>
+                    <failOnWarnings>false</failOnWarnings>
+                    <additionalJOption>-J-Duser.language=es</additionalJOption>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- ======================================================== -->
+            <!-- EMPAQUETADO CON DEPENDENCIAS                            -->
+            <!-- ======================================================== -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.utp.biblioteca.BibliotecaApplication</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- ================================================================ -->
+    <!-- PERFILES DE CONSTRUCCIÓN                                         -->
+    <!-- ================================================================ -->
+    <profiles>
+        <!-- ======================================================== -->
+        <!-- PERFIL DE DESARROLLO                                    -->
+        <!-- ======================================================== -->
+        <profile>
+            <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <database.url>jdbc:mysql://localhost:3306/biblioteca_digital_dev</database.url>
+                <database.username>root</database.username>
+                <database.password>password</database.password>
+                <hibernate.hbm2ddl.auto>create-drop</hibernate.hbm2ddl.auto>
+                <hibernate.show_sql>true</hibernate.show_sql>
+            </properties>
+        </profile>
+
+        <!-- ======================================================== -->
+        <!-- PERFIL DE TESTING                                       -->
+        <!-- ======================================================== -->
+        <profile>
+            <id>testing</id>
+            <properties>
+                <database.url>jdbc:h2:mem:testdb</database.url>
+                <database.username>sa</database.username>
+                <database.password></database.password>
+                <hibernate.hbm2ddl.auto>create-drop</hibernate.hbm2ddl.auto>
+                <hibernate.show_sql>true</hibernate.show_sql>
+            </properties>
+        </profile>
+
+        <!-- ======================================================== -->
+        <!-- PERFIL DE PRODUCCIÓN                                    -->
+        <!-- ======================================================== -->
+        <profile>
+            <id>production</id>
+            <properties>
+                <database.url>jdbc:mysql://localhost:3306/biblioteca_digital_prod</database.url>
+                <database.username>biblioteca_user</database.username>
+                <database.password>secure_password</database.password>
+                <hibernate.hbm2ddl.auto>validate</hibernate.hbm2ddl.auto>
+                <hibernate.show_sql>false</hibernate.show_sql>
+            </properties>
+        </profile>
+    </profiles>
+
+    <!-- ================================================================ -->
+    <!-- REPOSITORIOS                                                      -->
+    <!-- ================================================================ -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+    <!-- ================================================================ -->
+    <!-- INFORMACIÓN DE DISTRIBUCIÓN                                      -->
+    <!-- ================================================================ -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/tu-usuario/biblioteca-digital-poo</url>
+        </repository>
+    </distributionManagement>
+</project>
